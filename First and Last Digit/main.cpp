@@ -1,33 +1,26 @@
 #include <iostream>
-
+#include <bits/stdc++.h>
 using namespace std;
 
-int main()
-{
-   // cout << "Hello world!" << endl;
-    int t;
-    cin>>t;
-    while(t--)
-        {
-            int n,rem;
-            long sum=0;
-            cin>>n;
-            int arr[n];
-            int i=0;
-            for(int i=0;i<=n;i++)
+int main() {
+      int t;
+      cin >>t;
+      while (t--)
+      {
+            int n,r,last,first,sum=0;
+            cin >> n;
+            last = n%10;
+            while(n>0)
             {
-                while(n>0)
-                {
-                    rem=n/10;
-                    arr[i]=rem;
-                    n=n/10;
-                    ;
-                }
-            }
-            for(int i=0;i<=n;i++)
-            {cout<<arr[i];}
-            //cout<<sum<<endl;
+                  r = n%10;
+                  sum = sum*10+r;
+                  n = n/10;
 
-        }
-    return 0;
+            }
+            first = sum%10;
+            sum = last + first;
+            cout << sum << endl;
+      }
+
+	return 0;
 }
